@@ -5,23 +5,30 @@ import {
     NavLink,
     HashRouter
 } from "react-router-dom";
-import Home from "./Home";
-import Greyhound from "./Greyhound/Greyhound.js";
+import AvailableSnakes from "./AvailableSnakes";
+import Support from "./Support";
+import AboutUs from "./AboutUs";
+import snakies from './snakies.png';
 
 class Main extends Component {
     render() {
         return (
             <HashRouter>
             <div>
-                <h1>2.5 Performance Assessment</h1>
+                <h1 className="heading">A&G Reptiles</h1>
                 <ul className="header">
-                    <li><NavLink to="/">Home</NavLink></li>
-                    <li className="second"><NavLink to="/greyhound">Image</NavLink></li>
+                    <li><NavLink to="/aboutus">About Us</NavLink></li>
+                    <li><NavLink to="/support">24/7 Support</NavLink></li>
+                    <li><NavLink to="/availablesnakes">Available Snakes</NavLink></li>
                 </ul>
+                <div className="snakies">
+                    <img alt="snake header" src={snakies} />
+                </div>
                 <div className="content">
                 <Routes>
-                    <Route path="/" element={<Home/>}/>
-                    <Route path="/greyhound" element={<Greyhound/>}/>
+                    <Route path="/availablesnakes" element={<AvailableSnakes/>}/>
+                    <Route path="/support" element={<Support/>}/>
+                    <Route path="/aboutus" element={<AboutUs/>}/>
                 </Routes>
                 </div>
             </div>
